@@ -2,6 +2,8 @@ const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const cors = require('cors');
+const path = require('path');
+const normalizePort = require('normalize-port');
 
 const app = express();
 const PORT = normalizePort(process.env.PORT || '3000');
@@ -9,6 +11,10 @@ const PORT = normalizePort(process.env.PORT || '3000');
 // 启用CORS并托管静态文件
 app.use(cors());
 app.use(express.static('public'));
+
+app.get('/', function (req, res) {
+	res.sendFile(path.join(__dirname, '..', 'frontend', 'index.html'));
+});
 
 app.get('/scrape', async (req, res) => {
 	try {
@@ -57,3 +63,5 @@ app.get('/scrape', async (req, res) => {
 app.listen(PORT, () => {
 	console.log(`服务运行在 http://localhost:${PORT}`);
 });
+
+module.exports = app;

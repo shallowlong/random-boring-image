@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const loadingContainer = document.getElementById('loadingContainer');
 	const themeToggle = document.getElementById('themeToggle');
 	const errorMsg = document.getElementById('errorMsg');
+	const loadingText = document.getElementById('loadingText');
 
 	function initTheme() {
 		const savedTheme = localStorage.getItem('theme');
@@ -41,15 +42,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (data.error) {
 			errorMsg.textContent = data.error;
+			hideLoader();
 		} else if (data.success) {
 			randomImage.src = data.imageUrl;
 			randomImage.style.display = 'block';
+			loadingText.innerHTML = '<i class="fa-solid fa-circle-check"></i> Now loading the image...';
+			randomImage.onload = () => {
+				hideLoader();
+			};
 			document.querySelector('.image-placeholder').style.display = 'none';
 		} else {
 			errorMsg.textContent = data.message;
+			hideLoader();
 		}
-
-		hideLoader();
 	}
 
 	themeToggle.addEventListener('click', toggleTheme);
