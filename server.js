@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 const cors = require('cors');
 
 const app = express();
-const PORT = 3000;
+const PORT = normalizePort(process.env.PORT || '3000');
 
 // 启用CORS并托管静态文件
 app.use(cors());
