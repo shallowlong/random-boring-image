@@ -1,20 +1,19 @@
 {
 	"name": "random-boring-image",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "app.js",
+	"private": true,
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node api/index.js"
+		"start": "node bin/www"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "XISHU <shallowlong@gmail.com>",
 	"license": "MIT",
 	"description": "",
 	"dependencies": {
 		"axios": "^1.11.0",
 		"cheerio": "^1.1.2",
 		"cors": "^2.8.5",
-		"express": "^5.1.0",
-		"normalize-port": "^1.0.0"
+		"express": "^5.1.0"
 	}
 }

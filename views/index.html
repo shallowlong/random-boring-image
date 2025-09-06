@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.ico">
+	<title>随机的无聊图片 | Random Boring Images</title>
+	<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<div class="header-content">
+				<div class="title-container">
+					<h1>随机的无聊图片 <span class="translation">Random Boring Images</span></h1>
+					<button class="theme-toggle" id="themeToggle" title="switch">
+						<i class="fas fa-moon"></i>
+					</button>
+				</div>
+				<p class="subtitle">
+					刷新即随机啦 <span class="translation">Refresh for Random</span> ->
+					<button class="refresh-btn" title="refresh" onclick="location.reload()">
+						<i class="fas fa-sync-alt refresh-icon"></i>
+					</button>
+				</p>
+			</div>
+		</header>
+
+		<main class="content">
+			<div class="image-container">
+				<div id="imageDisplay">
+					<div class="image-placeholder">
+						<i class="fas fa-image"></i>
+						<h2>
+							等待加载<br><span class="translation">Waiting for Loading</span>
+						</h2>
+						<div id="errorMsg"></div>
+					</div>
+					<img id="randomImage" alt="Random boring image">
+					<div class="loading-container" id="loadingContainer">
+						<div class="loader"></div>
+						<p id="loadingText" class="loading-text">
+							查找中...<br><span class="translation">Searching...</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<div class="disclaimer">
+			<h3><i class="fas fa-exclamation-triangle"></i> 免责声明 <span class="block-translation">Disclaimer</span></h3>
+			<div class="disclaimer-content">
+				<p>
+					本网站展示的图片均来源于互联网公开资源，仅供娱乐和演示目的使用。
+					<span class="block-translation">All images displayed on this website are from public internet
+						resources and are for entertainment and demonstration purposes only.</span>
+				</p>
+				<p>
+					1. 本网站对图片的内容、准确性或版权状态不做任何保证。图片可能包含第三方内容，其版权归属原著作权人所有。
+					<span class="block-translation">1. This website makes no guarantees regarding the content, accuracy,
+						or copyright status of the images. Images may contain third-party content, and their copyright
+						belongs to the original copyright holders.</span>
+				</p>
+				<p>
+					2. 对随机出来的二维码等图片，如造成损失与本站无关，请自行甄别。
+					<span class="block-translation">2. This website is not liable for any losses caused by randomly
+						generated images such as QR codes; please verify them by yourself.</span>
+				</p>
+				<p>
+					3. 本网站不存储任何图片内容，仅提供图片链接展示功能。用户应自行判断图片内容的合法性和适当性。
+					<span class="block-translation">3. This website does not store any image content, only providing
+						image link display functionality. Users should independently judge the legality and
+						appropriateness of image content.</span>
+				</p>
+				<p>
+					4. 用户使用本网站服务即表示理解并同意：本网站不对因使用或无法使用所提供图片而导致的任何直接或间接损失承担责任。
+					<span class="block-translation">4. By using this website's services, users acknowledge and agree
+						that this website is not liable for any direct or indirect losses caused by the use or inability
+						to use the provided images.</span>
+				</p>
+				<p>
+					5. 本网站提供的服务仅面向18岁以上用户，禁止用于任何非法目的。
+					<span class="block-translation">5. This website's services are only available to users over 18 years
+						old, and prohibited from being used for any illegal purposes.</span>
+				</p>
+			</div>
+		</div>
+
+		<footer>
+			<p>[随机的无聊图片生成器/Random Boring Image Generator] &copy;2025 奚叔/XISHU</p>
+			<div class="social-links">
+				<a href="https://github.com/shallowlong/random-boring-image" class="social-link" title="GitHub项目" target="_blank" rel="noopener noreferrer">
+					<i class="fab fa-github"></i>
+				</a>
+				<a href="https://x.com/shallowlong" class="social-link" title="Twitter/X" target="_blank" rel="noopener noreferrer">
+					<i class="fab fa-twitter"></i>
+				</a>
+				<a href="https://www.haxiaodou.store/aboutme" class="social-link" title="个人首页" target="_blank" rel="noopener noreferrer">
+					<i class="fas fa-user"></i>
+				</a>
+			</div>
+		</footer>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

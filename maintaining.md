@@ -1,0 +1,1 @@
+2025.9.6 - adjust the project to be compatible with both local dev and vercel env.

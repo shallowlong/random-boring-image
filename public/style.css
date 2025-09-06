@@ -50,12 +50,45 @@ header {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	width: 100%;
 }
 
 .title-container {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	gap: 15px;
+}
+
+.refresh-btn {
+	border: none;
+	background: transparent;
+	padding: 0 8px;
+	cursor: pointer;
+	color: inherit;
+}
+
+.refresh-icon {
+	font-size: 1.1em;
+	margin-left: 8px;
+	transition: transform 0.3s ease;
+}
+
+.refresh-btn:hover .refresh-icon {
+	transform: rotate(180deg);
+}
+
+.translation {
+	font-size: 0.75em;
+	color: #666;
+	margin-left: 8px;
+	vertical-align: middle;
+}
+
+.block-translation {
+	font-size: 0.75em;
+	color: #666;
+	display: block;
+	margin-top: 4px;
 }
 
 h1 {
@@ -197,6 +230,24 @@ footer {
 	color: var(--text-secondary);
 	border-top: 1px solid var(--border-color);
 }
+
+.social-links {
+	margin-top: 12px;
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+}
+
+.social-link {
+	color: inherit;
+	font-size: 1.2em;
+	transition: color 0.3s ease;
+}
+
+.social-link:hover {
+	color: #337ab7;
+}
+
 
 @media (max-width: 768px) {
 	header {
