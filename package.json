@@ -1,12 +1,10 @@
 {
 	"name": "random-boring-image",
 	"version": "1.0.0",
-	"main": "app.js",
 	"private": true,
 	"scripts": {
-		"start": "node bin/www"
+		"start": "node ./bin/www.js"
 	},
-	"keywords": [],
 	"author": "XISHU <shallowlong@gmail.com>",
 	"license": "MIT",
 	"description": "",
