@@ -6,7 +6,7 @@ const path = require('path');
 
 const app = express();
 
-const url = 'https://freeimage.host/?random';
+const url = 'https://gengtu.net/memes/random/';
 
 app.use(cors());
 app.use(express.static('public'));
@@ -20,21 +20,18 @@ app.get('/scrape', async (req, res) => {
 		const { data } = await axios.get(url);
 		const $ = cheerio.load(data);
 
-		const targetElement = $('*:contains("Image URL")').filter((i, el) => {
-			return $(el).text().trim() === 'Image URL';
-		}).first();
+		const imgUrls = [];
+		$('.image-placeholder img').each((index, element) => {
+			const src = $(element).attr('src');
+			if (src) {
+				imgUrls.push(src);
+			}
+		});
 
 		let imageUrl = null;
-		if (targetElement.length) {
-			const parentDiv = targetElement.closest('div.panel-share-input-label');
-			const inputElement = parentDiv.find('input.text-input');
-
-			if (inputElement.length) {
-				imageUrl = inputElement.attr('value');
-				if (imageUrl && !imageUrl.startsWith('http')) {
-					imageUrl = new URL(imageUrl, url).href;
-				}
-			}
+		if (imgUrls.length > 0) {
+			const randomIndex = Math.floor(Math.random() * imgUrls.length);
+			imageUrl = imgUrls[randomIndex];
 		}
 
 		if (imageUrl) {

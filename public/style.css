@@ -289,3 +289,34 @@ footer {
 	color: var(--text-secondary);
 	line-height: 1.7;
 }
+
+/* 致谢区域样式 */
+.acknowledgment {
+	text-align: center;
+	padding: 20px 0;
+	color: var(--text-secondary);
+	font-size: 0.9rem;
+}
+
+.acknowledgment p {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+
+.acknowledgment a {
+	display: inline-flex;
+	align-items: center;
+	color: var(--text-secondary);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.acknowledgment a:hover {
+	color: var(--accent-color);
+}
+
+.acknowledgment img {
+	vertical-align: middle;
+}
